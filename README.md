@@ -26,3 +26,20 @@ Clone the repository and install the required packages.
 git clone https://github.com/anonymousphysicist/EmbeddedTime.git
 cd EmbeddedTime
 pip install -r requirements.txt
+
+## Usage
+Provide instructions and examples on how to use the quantum algorithms developed in this project.
+
+```python
+# Example usage
+from src.quantum_algorithm import run_quantum_algorithm
+
+result = run_quantum_algorithm()
+print(result)
+
+
+### 3. **Update requirements.txt**
+
+Ensure that `requirements.txt` includes all necessary dependencies for your algorithm:
+
+
