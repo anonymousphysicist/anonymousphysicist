@@ -32,14 +32,42 @@ Provide instructions and examples on how to use the quantum algorithms developed
 
 ```python
 # Example usage
-from src.quantum_algorithm import run_quantum_algorithm
+from src.optimized_grover import optimize_etpt_algorithm
 
-result = run_quantum_algorithm()
-print(result)
-
-
-### 3. **Update requirements.txt**
-
-Ensure that `requirements.txt` includes all necessary dependencies for your algorithm:
+optimize_etpt_algorithm()
 
 
+### 3. **Add to requirements.txt**
+
+Ensure that `requirements.txt` includes all necessary dependencies:
+
+qiskit
+qiskit-aer
+qiskit-ignis
+matplotlib
+numpy
+pytest
+
+
+### 4. **Update Tests**
+
+Create or update a test file to ensure the algorithm works as expected:
+
+**tests/test_optimized_grover.py:**
+
+```python
+import unittest
+from src.optimized_grover import run_grover_test
+
+class TestOptimizedGrover(unittest.TestCase):
+    def test_grover_algorithm(self):
+        n = 2
+        target_state = '11'
+        num_iterations = 1
+        counts, execution_time = run_grover_test(n, target_state, num_iterations)
+        self.assertIsInstance(counts, dict)
+        self.assertIn('11', counts)
+        self.assertGreater(counts['11'], 0)
+
+if __name__ == '__main__':
+    unittest.main()
